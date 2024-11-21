@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  @apply m-0 p-0;
+  font-family: sans-serif;
+}
+.hover-img:hover{
+  .hover-blue{
+    background-color:rgb(72, 202, 178) ;
+    color: white;
+  }
+ 
+}
+.hero-section{
+  background-image: url(./assets/hero.webp);
+}
+.text-color-blue{
+  color:rgb(72, 202, 178);
+}
+.color-blue{
+  background-color:rgb(72, 202, 178);
+}
+.img1{
+  background-image: url(./assets/img1.webp);
+}
+.img2{
+  background-image: url(./assets/img2.webp);
+}
+.img3{
+  background-image: url(./assets/img3.webp);
+}
