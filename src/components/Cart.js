@@ -1,51 +1,64 @@
-import React from 'react'
+
+import React from 'react';
 import { useSelector } from 'react-redux';
+
 const Cart = () => {
-  const cart = useSelector((state) => state.cart);
+  const cartItems = useSelector((state) => state.products.cart);
+  console.log(cartItems)
+
   return (
     <div className='mx-10 my-20'>
-        <div className='w w-7/12'>
-      <div className='flex items-center justify-between'>
-        <h1>Shopping Cart</h1>
-        <h4>3 items</h4>
-      </div>
-      <div className='flex justify-between text-gray-500'>
+      <div className='w w-4/6'>
+        <div className='flex items-center justify-between'>
+          <h1>Shopping Cart</h1>
+          <h4>{cartItems.length} items</h4>
+        </div>
+        <div className='flex justify-between text-gray-500 '>
+        <div>
         <p>PRODUCT DETAILS</p>
-        <div className='flex gap-40'>
-          <p>QUANTITY</p>
-          <p>PRICE</p>
-          <p>TOTAL</p>
         </div>
-      </div>
-      <div className='flex justify-between items-center'>
-      <div className='flex justify-between items-center '>
-        <div>
-          <img src="" alt="img" />
+        
+          <div className='flex gap-40'>
+            <p>QUANTITY</p>
+            <p>PRICE</p>
+            <p>TOTAL</p>
+          </div>
         </div>
-        <div>
-          <p>fifa</p>
-        </div>
+
+        {cartItems.map((item) => (
+          <div key={item.id} className='flex justify-between items-center mt-4 gap-28'>
+            <div className='flex  items-center w-96'>
+              <div>
+                {item.images && item.images.length > 0 ? (
+                  <img src={item.images[0]} alt={item.title} className='w-20 h-20 object-cover' />
+                ) : (
+                  <img src="default-image-path.jpg" alt="default" className='w-20 h-20 object-cover' />
+                )}
+              </div>
+              <div className='ml-4'>
+                <p className='font-bold'>{item.title}</p>
+              
+              </div>
+            </div>
+            <div className='w-7/12 flex justify-evenly gap-44 '>
+              <div className='flex items-center gap-2'>
+                <button className='border p-1'>-</button>
+                <p>{item.quantity}</p>
+                <button className='border p-1'>+</button>
+              </div>
+              <div>
+                <p>${item.price}</p>
+              </div>
+              <div>
+                <p>${item.price * item.quantity}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+
       </div>
-      <div className='w-7/12 flex justify-evenly gap-44'>
-      <div className='flex'>
-        <p>-</p>
-        <p>0</p>
-        <p>+</p>
-      </div>
-      <div>
-        <p>$44.00</p>
-      </div>
-      <div>
-        <p>total</p>
-      </div>
-      </div>
-    
-      </div>
-    
     </div>
-    </div>
-  
-  )
+  );
 }
 
-export default Cart
+export default Cart;

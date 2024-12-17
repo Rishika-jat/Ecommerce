@@ -7,8 +7,15 @@ import pic3 from "../assets/pic-3.jpg";
 import pic4 from "../assets/pic-4.jpg";
 import pic5 from "../assets/pic-5.jpg";
 
+import Shop from "./Shop";
 import product from "../assets/product.webp";
+import product2 from "../assets/product2.jpg"
+import product3 from "../assets/product3.jpg"
+import product4 from "../assets/product4.jpg"
+import product5 from "../assets/product5.jpg"
+import product6 from "../assets/product6.jpg"
 import Navbar from "./Navbar/Navbar";
+import { useNavigate } from 'react-router-dom';
 import {
   
   FaCar,
@@ -18,6 +25,10 @@ import {
 } from "react-icons/fa";
 import Footer from "./footer/Footer";
 const Home = () => {
+
+  const navigate = useNavigate();
+   const handleDiscoverNow = () => { navigate('/shop'); };
+
   return (
     <div>
     
@@ -31,7 +42,7 @@ const Home = () => {
           <p className="font-thin">
             Contemporary, minimal and beautiful iconic
           </p>
-          <button className="color-blue text-white font-bold border-0 px-5 py-3">
+          <button className="color-blue text-white font-bold border-0 px-5 py-3" onClick={handleDiscoverNow}>
             DISCOVER NOW!
           </button>
         </div>
@@ -73,7 +84,7 @@ const Home = () => {
           </div>
           <div>
             <div>
-              <img src={product} alt="" width={300} />
+              <img src={product2} alt="" width={250}/>
             </div>
             <div className="flex flex-col justify-center items-center space-y-0">
               <p>Button blazer</p>
@@ -83,7 +94,39 @@ const Home = () => {
           </div>
           <div>
             <div>
-              <img src={product} alt="" width={300} />
+              <img src={product3} alt="" width={255} />
+            </div>
+            <div className="flex flex-col justify-center items-center space-y-0">
+              <p>Button blazer</p>
+              <p>⭐⭐⭐⭐⭐</p>
+              <p>$678</p>
+            </div>
+          </div>
+        </div>
+        <div className="product flex gap-3 ms-12">
+          <div>
+            <div>
+              <img src={product5} alt="" width={300} height={380} />
+            </div>
+            <div className="flex flex-col justify-center items-center space-y-0">
+              <p>Button blazer</p>
+              <p>⭐⭐⭐⭐⭐</p>
+              <p>$678</p>
+            </div>
+          </div>
+          <div>
+            <div>
+              <img src={product4} alt="" width={310}/>
+            </div>
+            <div className="flex flex-col justify-center items-center space-y-0">
+              <p>Button blazer</p>
+              <p>⭐⭐⭐⭐⭐</p>
+              <p>$678</p>
+            </div>
+          </div>
+          <div>
+            <div>
+              <img src={product6} alt="" width={300} height={380}/>
             </div>
             <div className="flex flex-col justify-center items-center space-y-0">
               <p>Button blazer</p>

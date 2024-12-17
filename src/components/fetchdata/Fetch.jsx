@@ -25,9 +25,7 @@
 
 import React, {useEffect} from 'react';
 import { useSelector,useDispatch } from 'react-redux';
-import { setProducts
-
- } from '../actions/ProductAction';
+import { setProducts} from '../actions/ProductAction';
 
  const Fetch = ()=>{
   const dispatch = useDispatch();
