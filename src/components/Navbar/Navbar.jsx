@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-
+import { motion } from "framer-motion"
 import lg from "../../assets/lg.jpg";
 import logo from "../../assets/logo.png";
 import { FaSearch, FaShoppingCart, FaHeart, FaUser } from "react-icons/fa";

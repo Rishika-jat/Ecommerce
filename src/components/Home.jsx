@@ -103,7 +103,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="product flex gap-3 ms-12">
+        <div className="product flex gap-3 ms-">
           <div>
             <div>
               <img src={product5} alt="" width={300} height={380} />

@@ -13,8 +13,7 @@ const ProductDetail = ({ product }) => {
   const dispatch = useDispatch(); //Initialize dispatch
   console.log(product)
   const [displayImage, setDisplayImage] = useState(product.images[0]);
-
-
+  const [itemQuantity, setItemQuantity] = useState(1);
 
   let creation = product.category.creationAt;
   let date = new Date(creation);
@@ -28,6 +27,14 @@ const ProductDetail = ({ product }) => {
   const handleAddToCart=(product)=>{
    console.log(product)
    dispatch(addToCart(product)); //Dispatch addTocart action
+  }
+
+  const handleDecreaseQuantity=()=>{
+
+if(itemQuantity>1) setItemQuantity(itemQuantity-1)
+  }
+  const handleIncreaseQuantity=()=>{
+setItemQuantity(itemQuantity+1)
   }
 
   return (
@@ -96,9 +103,9 @@ const ProductDetail = ({ product }) => {
             </div> */}
             <div className='flex items-center justify-evenly gap-5'>
               <div className="flex mt-3">
-                <button className="border-0 px-5 py-2 text-gray-500 text-2xl">-</button>
-                <button className=" px-4 py-2 font-bold border-0">1</button>
-                <button className="border-0 px-4 py-2 text-gray-500 text-2xl">+</button>
+                <button className="border-0 px-5 py-2 text-gray-500 text-2xl" onClick={handleDecreaseQuantity}>-</button>
+                <button className=" px-4 py-2 font-bold border-0">{itemQuantity}</button>
+                <button className="border-0 px-4 py-2 text-gray-500 text-2xl" onClick={handleIncreaseQuantity}>+</button>
               </div>
               <div className="color-blue w-32 flex items-center justify-center mt-4">
                 <FaShoppingBag color="white"/>

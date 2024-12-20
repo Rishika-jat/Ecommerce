@@ -1,13 +1,13 @@
 
 import React from 'react';
 import { useSelector } from 'react-redux';
-
+import orderplace from "../assets/order-place.jpg"
 const Cart = () => {
   const cartItems = useSelector((state) => state.products.cart);
   console.log(cartItems)
 
   return (
-    <div className='mx-10 my-20'>
+    <div className='mx-10 my-20 flex gap-16'>
       <div className='w w-4/6'>
         <div className='flex items-center justify-between'>
           <h1>Shopping Cart</h1>
@@ -27,7 +27,7 @@ const Cart = () => {
 
         {cartItems.map((item) => (
           <div key={item.id} className='flex justify-between items-center mt-4 gap-28'>
-            <div className='flex  items-center w-96'>
+            <div className='flex  items-center w-96 '>
               <div>
                 {item.images && item.images.length > 0 ? (
                   <img src={item.images[0]} alt={item.title} className='w-20 h-20 object-cover' />
@@ -41,10 +41,11 @@ const Cart = () => {
               </div>
             </div>
             <div className='w-7/12 flex justify-evenly gap-44 '>
-              <div className='flex items-center gap-2'>
-                <button className='border p-1'>-</button>
-                <p>{item.quantity}</p>
-                <button className='border p-1'>+</button>
+              
+              <div className="flex mt-3">
+                <button className="border-0 px-5 py-2 text-gray-500 text-2xl">-</button>
+                <button className=" px-4 py-2 font-bold border-0">1</button>
+                <button className="border-0 px-4 py-2 text-gray-500 text-2xl">+</button>
               </div>
               <div>
                 <p>${item.price}</p>
@@ -56,6 +57,9 @@ const Cart = () => {
           </div>
         ))}
 
+      </div>
+      <div>
+        <img src={orderplace}  alt="" width={400} />
       </div>
     </div>
   );

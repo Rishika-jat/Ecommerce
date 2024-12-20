@@ -13,11 +13,12 @@ import Wishlist  from './components/Wishlist'
 import Cart from "./components/Cart"
 const App = () => {
   const [products,setProducts] = useState([])
+  
   // console.log(products);
   return (
 
     <>
-    <Fetch setProducts={setProducts} />
+    <Fetch setProducts={setProducts}  />
    
   <Router>
 <Navbar/>

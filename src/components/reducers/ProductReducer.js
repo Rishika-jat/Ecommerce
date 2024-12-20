@@ -8,7 +8,7 @@ const initialState = {
   const productReducer = (state = initialState, action) => {
     switch (action.type) {
       case 'ADD_TO_CART':
-        const product = action.payload;
+        const product= action.payload;
         const existingProduct = state.cart.find(item => item.id === product.id);
   
         if (existingProduct) {
@@ -21,7 +21,7 @@ const initialState = {
         } else {
           return {
             ...state,
-            cart: [...state.cart, { ...product, quantity: 1 }]
+            cart: [...state.cart, { ...product, quantity :1 }]
           };
         }
       
