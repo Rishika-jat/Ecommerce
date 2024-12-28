@@ -1,17 +1,25 @@
-import React, { useState } from "react";
-import { useSelector } from 'react-redux';
+import React, { useEffect, useState } from "react";
+
 import Navbar from "./Navbar/Navbar";
 import ProductDetail from "./productDetail";
 import Product from "./Product";
 import Footer from "./footer/Footer";
+import { useDispatch, useSelector } from 'react-redux';
+import { setItemQuantity } from "./actions/ProductAction";
 
 const Shop = () => {
+  const dispatch = useDispatch();
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState('All'); // State for selected category
   const [clickedButton, setClickedButton] = useState(''); // State for tracking clicked button
   const [priceRange, setPriceRange] = useState(100); // State for price range
 
   const products = useSelector((state) => state.products.products);
+
+//useEffect for handle itemQuantity
+useEffect(()=>{
+  dispatch(setItemQuantity(1))
+},[])
 
   const handleProductClick = (product) => {
     setSelectedProduct(product);

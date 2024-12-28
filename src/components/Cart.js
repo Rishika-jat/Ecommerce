@@ -1,17 +1,31 @@
 
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
 import orderplace from "../assets/order-place.jpg"
+import { updateCartQuantity } from './actions/ProductAction';
 const Cart = () => {
-  const cartItems = useSelector((state) => state.products.cart);
-  console.log(cartItems)
+  const cart = useSelector((state) => state.products.cart);
+  const dispatch = useDispatch();
+  
+
+     const handleDecreaseQuantity=(productId)=>{
+      const product = cart.find(item=>item.id===productId);
+             if(product.quantity>1){
+              dispatch(updateCartQuantity(productId,product.quantity-1));
+             }
+     };
+
+     const handleIncreaseQuantity = (productId)=>{
+      const product = cart.find(item=>item.id ===productId);
+      dispatch(updateCartQuantity(productId,product.quantity+1));
+     }
 
   return (
     <div className='mx-10 my-20 flex gap-16'>
       <div className='w w-4/6'>
         <div className='flex items-center justify-between'>
           <h1>Shopping Cart</h1>
-          <h4>{cartItems.length} items</h4>
+          <h4>{cart.length} items</h4>
         </div>
         <div className='flex justify-between text-gray-500 '>
         <div>
@@ -25,7 +39,7 @@ const Cart = () => {
           </div>
         </div>
 
-        {cartItems.map((item) => (
+        {cart.map((item) => (
           <div key={item.id} className='flex justify-between items-center mt-4 gap-28'>
             <div className='flex  items-center w-96 '>
               <div>
@@ -43,9 +57,9 @@ const Cart = () => {
             <div className='w-7/12 flex justify-evenly gap-44 '>
               
               <div className="flex mt-3">
-                <button className="border-0 px-5 py-2 text-gray-500 text-2xl">-</button>
-                <button className=" px-4 py-2 font-bold border-0">1</button>
-                <button className="border-0 px-4 py-2 text-gray-500 text-2xl">+</button>
+                <button className="border-0 px-5 py-2 text-gray-500 text-2xl" onClick={() => handleDecreaseQuantity(item.id)}>-</button>
+                <button className=" px-4 py-2 font-bold border-0">{item.quantity}</button>
+                <button className="border-0 px-4 py-2 text-gray-500 text-2xl" onClick={() => handleIncreaseQuantity(item.id)}>+</button>
               </div>
               <div>
                 <p>${item.price}</p>
@@ -66,3 +80,42 @@ const Cart = () => {
 }
 
 export default Cart;
+
+
+
+// import { useSelector, useDispatch } from 'react-redux';
+// import { updateCartQuantity } from './actions/ProductAction'; // Adjust path as necessary
+
+// const Cart = () => {
+//   const cart = useSelector((state) => state.products.cart);
+//   const dispatch = useDispatch();
+
+//   const handleDecreaseQuantity = (productId) => {
+//     const product = cart.find(item => item.id === productId);
+//     if (product.quantity > 1) {
+//       dispatch(updateCartQuantity(productId, product.quantity - 1));
+//     }
+//   };
+
+//   const handleIncreaseQuantity = (productId) => {
+//     const product = cart.find(item => item.id === productId);
+//     dispatch(updateCartQuantity(productId, product.quantity + 1));
+//   };
+
+//   return (
+//     <div>
+//       <h2>Your Cart</h2>
+//       <ul>
+//         {cart.map((item) => (
+//           <li key={item.id}>
+//             {item.title} - Quantity: {item.quantity}
+//             <button onClick={() => handleDecreaseQuantity(item.id)}>-</button>
+//             <button onClick={() => handleIncreaseQuantity(item.id)}>+</button>
+//           </li>
+//         ))}
+//       </ul>
+//     </div>
+//   );
+// };
+
+// export default Cart;

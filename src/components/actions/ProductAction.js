@@ -1,5 +1,4 @@
-import { SET_PRODUCTS} from "./actionTypes";
-import { ADD_TO_CART } from "./actionTypes";
+import { SET_PRODUCTS, ADD_TO_CART, SET_ITEM_QUANTITY, UPDATE_CART_QUANTITY } from './actionTypes';
 
 export const setProducts = (products) => {
   return {
@@ -8,15 +7,23 @@ export const setProducts = (products) => {
   };
 };
 
-export const addToCart = (product)=>{
-  return{
-    type:ADD_TO_CART,
-    payload:product,
-    
-   
+export const addToCart = (product) => {
+  return {
+    type: ADD_TO_CART,
+    payload: product,
   };
 };
 
+export const setItemQuantity = (quantity) => {
+  return {
+    type: SET_ITEM_QUANTITY,
+    payload: quantity,
+  };
+};
 
-//flux
-//MVC
+export const updateCartQuantity = (productId, quantity) => {
+  return {
+    type: UPDATE_CART_QUANTITY,
+    payload: { productId, quantity },
+  };
+};
