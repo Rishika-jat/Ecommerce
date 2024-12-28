@@ -1,9 +1,9 @@
 import React from 'react'
-
+import wishlist from "../assets/wishlist.png"
 const Wishlist = () => {
   return (
     <div>
-      <h1 className='text-center mt-10'>Wishlist</h1>
+   <img src={wishlist} alt="" />
     </div>
   )
 }

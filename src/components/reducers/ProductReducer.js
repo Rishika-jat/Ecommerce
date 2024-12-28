@@ -40,7 +40,7 @@
   
 //   export default productReducer;
   
-import { SET_PRODUCTS, ADD_TO_CART, SET_ITEM_QUANTITY, UPDATE_CART_QUANTITY } from "../actions/actionTypes"
+import { SET_PRODUCTS, ADD_TO_CART, SET_ITEM_QUANTITY, UPDATE_CART_QUANTITY ,REMOVE_FROM_CART } from "../actions/actionTypes"
 
 const initialState = {
   products: [],
@@ -88,6 +88,12 @@ const productReducer = (state = initialState, action) => {
           item.id === productId ? { ...item, quantity: quantity } : item
         ),
       };
+
+      case REMOVE_FROM_CART:
+        return{
+          ...state,
+          cart:state.cart.filter(item=>item.id!==action.payload)
+        }
 
     default:
       return state;
