@@ -1,4 +1,4 @@
-import { SET_PRODUCTS, ADD_TO_CART, SET_ITEM_QUANTITY, UPDATE_CART_QUANTITY,REMOVE_FROM_CART } from './actionTypes';
+import { SET_PRODUCTS, ADD_TO_CART, SET_ITEM_QUANTITY, UPDATE_CART_QUANTITY,REMOVE_FROM_CART , ADD_TO_WISHLIST, REMOVE_FROM_WISHLIST} from './actionTypes';
 
 export const setProducts = (products) => {
   return {
@@ -32,5 +32,19 @@ export const removeFromCart= (productId)=>{
 return{
   type:REMOVE_FROM_CART,
   payload:productId,
+};
+};
+
+export const addToWishlist = (product) =>{
+  return{
+    type:ADD_TO_WISHLIST,
+    payload:product,
+  }
 }
+
+export const removeFromWishlist = (productId)=>{
+  return{
+    type:REMOVE_FROM_WISHLIST, 
+    payload:productId
+  }
 }
