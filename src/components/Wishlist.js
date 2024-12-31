@@ -43,7 +43,7 @@ const Wishlist = () => {
             >
               <img src={item.images[0]} alt={item.title} width={250} />
               {/* <p className="p-0 m-0 whitespace-nowrap overflow-hidden text-ellipsis">{item.title}</p> */}
-              <p className="p-0 m-0 overflow-hidden text-ellipsis text-sm ">{item.title}</p>
+              <p className="p-0 m-0 overflow-hidden text-ellipsis text-sm line-clamp-2 h-10">{item.title}</p>
 
               <p>${item.price}</p>
               <div className="flex gap-4 mt-4">

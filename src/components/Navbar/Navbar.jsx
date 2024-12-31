@@ -24,7 +24,7 @@ const Navbar = () => {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              isActive ? "underline text-black" : "no-underline text-black"
+              isActive ? "underline text-black font-bold " : "no-underline text-black"
             }
           >
             <li>Home</li>
@@ -32,7 +32,7 @@ const Navbar = () => {
           <NavLink
             to="/shop"
             className={({ isActive }) =>
-              isActive ? "underline text-black" : "no-underline text-black"
+              isActive ? "underline text-black font-bold" : "no-underline text-black"
             }
           >
             <li>Shop</li>
@@ -40,7 +40,7 @@ const Navbar = () => {
           <NavLink
             to="/contact"
             className={({ isActive }) =>
-              isActive ? "underline text-black" : "no-underline text-black"
+              isActive ? "underline text-black font-bold" : "no-underline text-black"
             }
           >
             {" "}

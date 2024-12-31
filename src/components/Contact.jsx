@@ -1,7 +1,6 @@
 import React from "react";
-import Navbar from "./Navbar/Navbar";
 import contact1 from "../assets/contact31.jpg";
-import Footer from "./footer/Footer";
+
 
 const Contact = () => {
   return (
