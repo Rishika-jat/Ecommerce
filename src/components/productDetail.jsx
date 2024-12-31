@@ -1,4 +1,4 @@
-// export default ProductDetail;
+
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { FaShoppingBag } from 'react-icons/fa';

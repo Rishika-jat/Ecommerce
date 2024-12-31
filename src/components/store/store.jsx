@@ -4,7 +4,7 @@ import productReducer from './reducers/productReducer';
 
 const rootReducer = combineReducers({
   products: productReducer,
-  // Add other reducers here if needed
+
 });
 
 const store = createStore(rootReducer, composeWithDevTools());

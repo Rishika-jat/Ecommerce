@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
-
-import Navbar from "./Navbar/Navbar";
 import ProductDetail from "./productDetail";
 import Product from "./Product";
-import Footer from "./footer/Footer";
 import { useDispatch, useSelector } from 'react-redux';
 import { setItemQuantity } from "./actions/ProductAction";
 
