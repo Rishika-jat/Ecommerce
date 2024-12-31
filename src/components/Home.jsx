@@ -1,20 +1,18 @@
 import React from "react";
-import logo from "../assets/logo.png"
-import lg from "../assets/lg.jpg"
+
 import pic1 from "../assets/pic-1.jpg";
 import pic2 from "../assets/pic-2.jpg";
 import pic3 from "../assets/pic-3.jpg";
 import pic4 from "../assets/pic-4.jpg";
 import pic5 from "../assets/pic-5.jpg";
 
-import Shop from "./Shop";
 import product from "../assets/product.webp";
 import product2 from "../assets/product2.jpg"
 import product3 from "../assets/product3.jpg"
 import product4 from "../assets/product4.jpg"
 import product5 from "../assets/product5.jpg"
 import product6 from "../assets/product6.jpg"
-import Navbar from "./Navbar/Navbar";
+
 import { useNavigate } from 'react-router-dom';
 import {
   
@@ -23,7 +21,7 @@ import {
   FaGlobe,
   FaHeadphones,
 } from "react-icons/fa";
-import Footer from "./footer/Footer";
+
 const Home = () => {
 
   const navigate = useNavigate();

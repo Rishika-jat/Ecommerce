@@ -19,7 +19,7 @@ const Shop = () => {
 //useEffect for handle itemQuantity
 useEffect(()=>{
   dispatch(setItemQuantity(1))
-},[])
+},[dispatch])
 
   const handleProductClick = (product) => {
     setSelectedProduct(product);
