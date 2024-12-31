@@ -42,7 +42,9 @@ const Wishlist = () => {
               className="flex flex-col items-center p-4 mb-4 rounded-lg w-56 space-y-0 gap-2 shadow-2xl px-8"
             >
               <img src={item.images[0]} alt={item.title} width={250} />
-              <p className="p-0 m-0 whitespace-nowrap overflow-hidden text-ellipsis">{item.title}</p>
+              {/* <p className="p-0 m-0 whitespace-nowrap overflow-hidden text-ellipsis">{item.title}</p> */}
+              <p className="p-0 m-0 overflow-hidden text-ellipsis text-sm ">{item.title}</p>
+
               <p>${item.price}</p>
               <div className="flex gap-4 mt-4">
                 <div className="color-blue w-32 flex items-center justify-center mt-4 p-0 m-0">
