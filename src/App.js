@@ -11,6 +11,7 @@ import Navbar from './components/Navbar/Navbar'
 import Footer from "./components/footer/Footer"
 import Wishlist  from './components/Wishlist'
 import Cart from "./components/Cart"
+
 const App = () => {
   const [products,setProducts] = useState([])
   

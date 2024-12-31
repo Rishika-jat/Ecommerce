@@ -55,7 +55,7 @@ const Product = ({ product, onClick }) => {
         <button className="bg-transparent border-0">
           <p className="bg-white w-10 h-10 rounded-full flex items-center justify-center">
             {isInWishlist ? (
-              <FaHeart width={200} onClick={(event) => handleWishlist(event,product)} />
+              <FaHeart width={200} color="red"  onClick={(event) => handleWishlist(event,product)} />
             ) : (
               <CiHeart width={200} onClick={(event) => handleWishlist(event,product)} />
             )}
