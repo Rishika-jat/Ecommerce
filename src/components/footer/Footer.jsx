@@ -8,8 +8,8 @@ import lg from "../../assets/lg.jpg";
 import logo from "../../assets/logo.png"
 const Footer = () => {
   return (
-    <div className="mt-16 drop-shadow-sm bg-gray-50 pt-10">
-    <div className="flex justify-center items-center mb-10 w-full gap-24 border-gray-400">
+    <div className="mt-16 drop-shadow-sm bg-gray-50 pt-10 ">
+    <div className="flex justify-center items-center flex-wrap mb-10 w-full md:flex-wrap gap-24 md:gap-16 border-gray-400">
       <div className="w-96 flex flex-col gap-3">
         <div className='flex items-center justify-start gap-1'>
           <img src={lg} alt="" className="w-10 rotate-180" />

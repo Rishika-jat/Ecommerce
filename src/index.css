@@ -14,8 +14,11 @@ body {
   }
  
 }
+
+
 .hero-section{
   background-image: url(./assets/hero.webp);
+background-size: contain;
 }
 .text-color-blue{
   color:rgb(72, 202, 178);
@@ -31,4 +34,19 @@ body {
 }
 .img3{
   background-image: url(./assets/img3.webp);
+}
+
+
+@media (max-width:500px){
+  .hero-section{
+background-image:none;
+background: linear-gradient(90deg, rgba(244,244,244,1) 100%, rgba(242,234,234,1) 100%);
+height: fit-content;
+padding-bottom: 5px;
+gap: 5;
+color: black;
+  }
+  .hero-2{
+    display: none;
+  }
 }
