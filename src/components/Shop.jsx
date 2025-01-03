@@ -46,7 +46,7 @@ useEffect(()=>{
           <h1>All Products</h1>
           <div className="top-product flex flex-col justify-center items-center flex-wrap gap-5">
             <div className="flex gap-4 items-center justify-between w-3/4">
-              <div className="flex gap-4">
+              <div className="flex gap-4 flex-wrap">
               <button className={`border-blue-300 shadow-lg rounded-2xl px-4 py-2 ${clickedButton === 'All' ? 'bg-blue-500 text-white font-bold' : 'bg-white'}`} onClick={() => handleCategoryClick('All')} > All </button>
                 <button 
                   className={`border-blue-300 shadow-lg rounded-2xl px-4 py-2 ${clickedButton === 'Clothes' ? 'color-blue text-white font-bold border-0' : 'bg-white '}`}
@@ -94,7 +94,7 @@ useEffect(()=>{
                
               </div>
             </div>
-            <div className="product flex gap-10 flex-wrap w-10/12">
+            <div className="product flex gap-10 flex-wrap w-10/12 items-center justify-center">
               {filteredProducts && filteredProducts.map((pro) => (
                 <Product key={pro.id} product={pro} onClick={() => handleProductClick(pro)} />
               ))}
