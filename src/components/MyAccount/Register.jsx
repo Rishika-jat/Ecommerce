@@ -62,7 +62,7 @@ const Register = () => {
     <div>
       {!isLoggedIn ? (
         <div className="flex justify-center items-center mt-10">
-          <div className="w-96 px-10 py-5 pb-10 bg-gray-50">
+          <div className="w-96 signup-form-container  px-10 py-5 pb-10 bg-gray-50">
             <h1>Create an Account</h1>
             <Formik
               initialValues={initialValues}
@@ -78,7 +78,7 @@ const Register = () => {
                     type="text"
                     id="Name"
                     name="Name"
-                    className="h-7 w-72 px-3 py-2 focus:shadow-lg focus:outline-none focus:border-0 text-base font-bold"
+                    className="h-7 w-72  px-3 py-2 focus:shadow-lg focus:outline-none focus:border-0 text-base font-bold form-field"
                     placeholder="Enter your name"
                   />
                   <ErrorMessage name="Name" component="div" className="text-red-500 text-xs" />
@@ -92,7 +92,7 @@ const Register = () => {
                     type="email"
                     id="email"
                     name="email"
-                    className="h-7 w-72 px-3 py-2 focus:shadow-lg focus:outline-none focus:border-0 text-base font-bold"
+                    className="h-7 w-72 px-3 py-2 focus:shadow-lg focus:outline-none focus:border-0 text-base font-bold form-field"
                     placeholder="Enter Email"
                   />
                   <ErrorMessage name="email" component="div" className="text-red-500 text-xs" />
@@ -106,14 +106,14 @@ const Register = () => {
                     type="password"
                     id="password"
                     name="password"
-                    className="h-7 w-72 px-3 py-2 focus:shadow-lg focus:outline-none focus:border-0 text-base font-bold"
+                    className="h-7 w-72 px-3 py-2 focus:shadow-lg focus:outline-none focus:border-0 text-base font-bold form-field"
                     placeholder="Enter Password"
                   />
                   <ErrorMessage name="password" component="div" className="text-red-500 text-xs" />
                 </div>
 
                 <div>
-                  <button className="color-blue w-80 py-3 text-white border-0 font-bold rounded-sm" type="submit">
+                  <button className="color-blue w-80 py-3 text-white border-0 font-bold rounded-sm form-field" type="submit">
                     Create
                   </button>
                 </div>
@@ -132,12 +132,12 @@ const Register = () => {
              <div className="flex items-end justify-end  w-full bg-transparent ">
           <button onClick={handleLogout} className="border-0 bg-white "><IoIosLogOut className="text-3xl mr-10"  /></button>   
              </div>   
-        <div className="flex items-center justify-around -mt-28">
+        <div className="flex items-center justify-around -mt-28 flex-wrap  md:gap-0">
           <div>
-            <img src={shopping} alt="shopping" width={700} />
+            <img src={shopping} alt="shopping" width={700} className="welcome-hero-image"/>
           </div>
-          <div className="flex flex-col items-start justify-center mb-28 mr-20">
-            <h1 style={{ fontFamily: "cursive" }} className="text-8xl line-coverage">
+          <div className="flex flex-col items-start justify-center mb-28 mr-20 md:mb-0 welcome-head-div ">
+            <h1 style={{ fontFamily: "cursive" }} className="Welcome-heading text-8xl line-coverage">
               Welcome, <br /> {userDetails.Name}!
             </h1>
             <button className="color-blue text-white font-bold border-0 px-5 py-3" onClick={handleDiscoverNow}>
