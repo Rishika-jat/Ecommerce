@@ -10,7 +10,8 @@ import Navbar from './components/Navbar/Navbar'
 import Footer from "./components/footer/Footer"
 import Wishlist  from './components/Wishlist'
 import Cart from "./components/Cart"
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const App = () => {
   const [products,setProducts] = useState([])
   
@@ -19,7 +20,7 @@ const App = () => {
 
     <>
     <Fetch setProducts={setProducts}  />
-   
+    <ToastContainer />
   <Router>
 <Navbar/>
     <Routes>

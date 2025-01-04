@@ -1,8 +1,11 @@
 
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { FaShoppingBag } from 'react-icons/fa';
 import { addToCart, setItemQuantity } from './actions/ProductAction';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ProductDetail = ({ product }) => {
   const dispatch = useDispatch();
@@ -11,6 +14,7 @@ const ProductDetail = ({ product }) => {
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
+    toast.success("Added to cart!", { position: "top-right", autoClose: 3000 });
   };
 
   const handleDecreaseQuantity = () => {
@@ -81,6 +85,7 @@ const ProductDetail = ({ product }) => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
