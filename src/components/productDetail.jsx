@@ -29,8 +29,11 @@ const ProductDetail = ({ product }) => {
 
   return (
     <div>
-      <div className="mx-32 my-16 flex gap-10">
-        <div>
+      <div className="mx-32 my-16 md:mx-2 flex gap-10  addtocart-main-container">
+      <div className='flex gap-5  addtocart-img-main'>
+
+     
+        <div className='addtocart-img-container'>
           <div>
             <img
               src={product.images[0]}
@@ -57,9 +60,10 @@ const ProductDetail = ({ product }) => {
           </div>
         </div>
         <div>
-          <div>
-            <img src={displayImage} alt="main-img" width={550} />
+          <div >
+            <img src={displayImage} alt="main-img" className='addtocart-img' width={550} />
           </div>
+        </div>
         </div>
         <div>
           <p className="text-color-blue text-3xl font-bold">${product.price}</p>

@@ -1,5 +1,4 @@
 
-
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import orderplace from "../assets/order-place.jpg";
@@ -37,15 +36,20 @@ const Cart = () => {
     }
   };
 
+  // Calculate the total items, subtotal, and total
+  const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+  const subtotal = cart.reduce((total, item) => total + item.price * item.quantity, 0);
+  const total = subtotal; // Add any additional charges or discounts here
+
   return (
-    <div className='mx-10 my-16 flex gap-16'>
-      <div className='w w-4/6 cart-heading-section'>
+    <div className='mx-10 my-16 flex gap-16 flex-wrap '>
+      <div className='w-4/6  md:w-4/5 lg:w-4/5 cart-heading-section'>
         <div className='flex items-center justify-between mb-5'>
           <h1>Shopping Cart</h1>
           <h4>{cart.length} items</h4>
         </div>
-        <div className='flex justify-center color-blue text-white w-full px-20'>
-          <div className=' w-2/5'>
+        <div className='flex justify-center color-blue w-10/12 text-white px-20 md:w-full lg:w-full xl:w-10/12'>
+          <div className='w-2/5'>
             <p className="">PRODUCT DETAILS</p>
           </div>
           <div className='flex justify-between gap-28'>
@@ -56,10 +60,10 @@ const Cart = () => {
         </div>
 
         {cart.map((item) => (
-          <div key={item.id} className='flex justify-between items-center mt-4 gap-28 border-x-0 border-t-0 border-solid border-gray-200 pb-4 w-full p-0 m-0 '>
-            <div className='flex  items-center w-full '>
+          <div key={item.id} className='flex justify-between items-center w-full lg:w-full md:w-full mt-4 gap-28  border-x-0 border-t-0 border-solid border-gray-200 pb-4 l p-0 m-0 addtocartItem'>
+            <div className='flex items-center w-full'>
               <div className='flex gap-7 justify-evenly text-gray-400 items-center mr-5'>
-                <p className='text-xl' onClick={() => handleRemove(item.id)}> <RiDeleteBin6Line /></p>
+                <p className='text-xl' onClick={() => handleRemove(item.id)}><RiDeleteBin6Line /></p>
                 <p onClick={() => handleWishlist(item)}>
                   {wishlist.some(wishlistItem => wishlistItem.id === item.id) ? (
                     <FaHeart className='text-xl' />
@@ -75,14 +79,14 @@ const Cart = () => {
                   <img src="default-image-path.jpg" alt="default" className='w-20 h-20 object-cover' />
                 )}
               </div>
-              <div className='ml-4 '>
+              <div className='ml-4'>
                 <p className='font-bold'>{item.title}</p>
               </div>
             </div>
-            <div className=' w-full flex justify-evenly gap-28 '>
+            <div className='w-full flex justify-evenly gap-28'>
               <div className="flex mt-3 w-12 justify-center">
                 <button className="border-0 px-5 py-2 text-gray-500 text-2xl" onClick={() => handleDecreaseQuantity(item.id)}>-</button>
-                <button className=" px-4 py-2 font-bold border-0">{item.quantity}</button>
+                <button className="px-4 py-2 font-bold border-0">{item.quantity}</button>
                 <button className="border-0 px-4 py-2 text-gray-500 text-2xl" onClick={() => handleIncreaseQuantity(item.id)}>+</button>
               </div>
               <div className='flex items-center justify-center w-6'>
@@ -95,8 +99,34 @@ const Cart = () => {
           </div>
         ))}
       </div>
-      <div className='flex items-center justify-center md:hidden lg:hidden sm:hidder xl:flex addToCart-image'>
-        <img src={orderplace} alt="" width={300} />
+
+  
+
+      <div className='flex items-center justify-center xl:flex addToCart-image flex-col'>
+      <div className='flex lg:hidden md:hidden'>
+      <img src={orderplace} alt="Order Place" width={250} />
+      </div>
+       
+        <div className='w-2/6 lg:w-full md:full flex flex-col gap-5 items-center justify-center'>
+        <div className="bg-white p-6 relative w-72  shadow-xl rounded-md">
+          <h3 className="text-xl font-bold mb-4">Order Summary</h3>
+          <div className="flex justify-between mb-2">
+            <p>Total Items:</p>
+            <p>{totalItems}</p>
+          </div>
+          <div className="flex justify-between mb-2">
+            <p>Subtotal:</p>
+            <p>${subtotal.toFixed(2)}</p>
+          </div>
+          <div className="flex justify-between mb-4">
+            <p>Total:</p>
+            <p>${total.toFixed(2)}</p>
+          </div>
+          <button className="w-full py-2 color-blue text-white font-bold rounded-md ">
+            Proceed to Checkout
+          </button>
+        </div>
+      </div>
       </div>
     </div>
   );

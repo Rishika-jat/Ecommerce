@@ -90,6 +90,28 @@ font-size: 25px;
   .cart-heading-section{
     width: 100%;
   }
+ .addtocart-img-container{
+  display: flex;
+  gap: 2px;
+ }
+ .addtocart-main-container{
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  margin: 0 30%;
+  flex-wrap: wrap;
+ }
+ .addtocart-img-container img{
+width: 100px;
+
+ }
+ .addtocart-img{
+  width: 300px;
+ }
+ .addtocart-img-main{
+  display: flex;
+  flex-wrap: wrap;
+ }
 }
 
 @media (max-width:1100px) and (min-width:500px){
@@ -103,9 +125,21 @@ font-size: 25px;
     width: 400px;
    
   }
+  .addtocart-main-container{
+    flex-wrap: wrap;
+  }
+  .addtocart-img-main{
+    flex-wrap: flex;
+   }
 }
 @media (max-width:800px){
   .contact-form-section{
     width:80%;
   }
+  .addtocart-main-container{
+    flex-wrap: wrap;
+  }
+  .addtocart-img-main{
+    flex-wrap: flex;
+   }
 }
