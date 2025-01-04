@@ -6,6 +6,7 @@ html,
 body {
   @apply m-0 p-0;
   font-family: sans-serif;
+overflow-x: hidden;
 }
 .hover-img:hover{
   .hover-blue{
@@ -115,6 +116,26 @@ width: 100px;
  .cart-main-container {
   flex-wrap: wrap;
    }
+   .Cart-heading{
+    padding: 0;
+
+ flex-wrap: wrap;
+ display: none;
+  }
+  .total-modal-box{
+   
+    margin-top: -50px;
+    margin-left: -20px;
+  }
+  .footer-text{
+    padding-left: 10px;
+  }
+  .footer-section-2{
+    margin-left: -70px;
+  }
+  .footer-section{
+    gap: 20px;
+  }
 }
 
 @media (max-width:1100px) and (min-width:500px){
@@ -144,8 +165,25 @@ width: 100px;
   }
   .addtocart-main-container{
     flex-wrap: wrap;
+    margin: 0 10px;
   }
   .addtocart-img-main{
     flex-wrap: flex;
    }
+  .Cart-heading{
+    padding: 0;
+
+ flex-wrap: wrap;
+  }
+  .product-details{
+    width: 100px;
+  }
+  .cart-heading-section{
+    width: 100%;
+   
+  }
+  .addtocartItem{
+    flex-wrap: wrap;
+    gap: 0;
+  }
 }

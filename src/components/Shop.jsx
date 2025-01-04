@@ -47,7 +47,7 @@ useEffect(()=>{
           <div className="top-product flex flex-col justify-center items-center flex-wrap gap-5">
             <div className="flex gap-4 items-center justify-between w-3/4">
               <div className="flex gap-4 flex-wrap">
-              <button className={`border-blue-300 shadow-lg rounded-2xl px-4 py-2 ${clickedButton === 'All' ? 'bg-blue-500 text-white font-bold' : 'bg-white'}`} onClick={() => handleCategoryClick('All')} > All </button>
+              <button className={`border-blue-300 shadow-lg rounded-2xl px-4 py-2 ${clickedButton === 'All' ? 'color-blue text-white font-bold' : 'bg-white'}`} onClick={() => handleCategoryClick('All')} > All </button>
                 <button 
                   className={`border-blue-300 shadow-lg rounded-2xl px-4 py-2 ${clickedButton === 'Clothes' ? 'color-blue text-white font-bold border-0' : 'bg-white '}`}
                   onClick={() => handleCategoryClick('Clothes')}

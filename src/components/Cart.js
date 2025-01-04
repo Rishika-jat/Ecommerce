@@ -48,8 +48,8 @@ const Cart = () => {
           <h1>Shopping Cart</h1>
           <h4>{cart.length} items</h4>
         </div>
-        <div className='flex justify-center color-blue w-10/12 text-white px-20 md:w-full lg:w-full xl:w-10/12'>
-          <div className='w-2/5'>
+        <div className='flex justify-center color-blue w-10/12 text-white px-20 md:w-full lg:w-full xl:w-10/12 Cart-heading'>
+          <div className='w-2/5 product-details'>
             <p className="">PRODUCT DETAILS</p>
           </div>
           <div className='flex justify-between gap-28'>
@@ -102,13 +102,13 @@ const Cart = () => {
 
   
 
-      <div className='flex items-center justify-center xl:flex addToCart-image flex-col'>
-      <div className='flex lg:hidden md:hidden'>
+      <div className='flex items-center justify-center xl:flex  flex-col'>
+      <div className='flex lg:hidden md:hidden addToCart-image'>
       <img src={orderplace} alt="Order Place" width={250} />
       </div>
        
-        <div className='w-2/6 lg:w-full md:full flex flex-col gap-5 items-center justify-center'>
-        <div className="bg-white p-6 relative w-72  shadow-xl rounded-md">
+        <div className='w-2/6 lg:w-full md:full flex flex-col gap-5 items-center justify-center '>
+        <div className="bg-white p-6 relative w-72  shadow-xl rounded-md total-modal-box">
           <h3 className="text-xl font-bold mb-4">Order Summary</h3>
           <div className="flex justify-between mb-2">
             <p>Total Items:</p>
