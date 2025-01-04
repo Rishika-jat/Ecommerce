@@ -42,8 +42,8 @@ const Cart = () => {
   const total = subtotal; // Add any additional charges or discounts here
 
   return (
-    <div className='mx-10 my-16 flex gap-16 flex-wrap '>
-      <div className='w-4/6  md:w-4/5 lg:w-4/5 cart-heading-section'>
+    <div className='mx-10 my-16 flex gap-16 cart-main-container '>
+      <div className='w-4/6 cart-heading-section'>
         <div className='flex items-center justify-between mb-5'>
           <h1>Shopping Cart</h1>
           <h4>{cart.length} items</h4>

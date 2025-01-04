@@ -112,6 +112,9 @@ width: 100px;
   display: flex;
   flex-wrap: wrap;
  }
+ .cart-main-container {
+  flex-wrap: wrap;
+   }
 }
 
 @media (max-width:1100px) and (min-width:500px){
@@ -130,6 +133,9 @@ width: 100px;
   }
   .addtocart-img-main{
     flex-wrap: flex;
+   }
+   .cart-main-container {
+  flex-wrap: wrap;
    }
 }
 @media (max-width:800px){

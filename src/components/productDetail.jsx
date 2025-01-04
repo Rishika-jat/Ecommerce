@@ -30,7 +30,7 @@ const ProductDetail = ({ product }) => {
   return (
     <div>
       <div className="mx-32 my-16 md:mx-2 flex gap-10  addtocart-main-container">
-      <div className='flex gap-5  addtocart-img-main'>
+      <div className='flex gap-5  addtocart-img-main flex-row'>
 
      
         <div className='addtocart-img-container'>
